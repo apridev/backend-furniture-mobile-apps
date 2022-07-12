@@ -10,6 +10,7 @@ const flash = require('connect-flash');
 var dashboardRouter = require('./app/dashboard/router');
 var categoriesRouter = require('./app/categories/router');
 var colorsRouter = require('./app/colors/router');
+var productRouter = require('./app/product/router');
 
 var app = express();
 
@@ -35,6 +36,7 @@ app.use('/adminlte', express.static(path.join(__dirname, '/node_modules/admin-lt
 app.use('/', dashboardRouter);
 app.use('/categories', categoriesRouter);
 app.use('/colors', colorsRouter);
+app.use('/product', productRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
