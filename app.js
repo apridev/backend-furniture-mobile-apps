@@ -11,6 +11,8 @@ var dashboardRouter = require('./app/dashboard/router');
 var categoriesRouter = require('./app/categories/router');
 var colorsRouter = require('./app/colors/router');
 var productRouter = require('./app/product/router');
+var cardRouter = require('./app/card/router');
+var paymentRouter = require('./app/payment/router');
 
 var app = express();
 
@@ -37,6 +39,8 @@ app.use('/', dashboardRouter);
 app.use('/categories', categoriesRouter);
 app.use('/colors', colorsRouter);
 app.use('/product', productRouter);
+app.use('/card', cardRouter);
+app.use('/payment', paymentRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
