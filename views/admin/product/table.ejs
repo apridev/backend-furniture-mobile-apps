@@ -1,0 +1,33 @@
+<table id="example2" class="table table-bordered table-hover">
+    <thead>
+    <tr>
+      <th>No</th>
+      <th>Img</th>
+      <th>Name product</th>
+      <th>Categories</th>
+      <th>Price</th>
+      <th>Options</th>
+    </tr>
+    </thead>
+    <tbody>
+      <% for(let i = 0; i < product.length; i++){ %>
+        <tr>
+          <td><%= i + 1 %></td>
+          <td><img width="100px" class="rounded float-left" src="http://localhost:3000/uploads/<%= product[i].thumbnail %>" alt=""></td>
+          <td><%= product[i].name %></td>
+          <td><%= product[i].categories.name %></td>
+          <td>$<%= product[i].price %></td>
+          <td>
+            <form action="/product/delete/<%= product[i]._id %>?_method=DELETE" method="POST">
+            <a href="/product/edit/<%= product[i]._id %>" class="btn btn-sm btn-warning">Edit</a>
+            <!-- Button trigger modal -->
+                <button type="submit" class="btn btn-sm btn-danger">
+                  Delete
+                </button>
+                <!-- Modal -->
+          </form>
+          </td>
+        </tr>
+        <% } %>
+    </tbody>
+  </table>
