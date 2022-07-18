@@ -1,0 +1,59 @@
+<%- include ../../partials/header %>
+<%- include ../../partials/navbar %>
+<%- include ../../partials/sidebar %>
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Card</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="/card">Card</a></li>
+              <li class="breadcrumb-item active">Edit Card</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+  
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="card card-warning">
+              <div class="card-header">
+                <h3 class="card-title">
+                    Edit Card
+                </h3>
+              </div>
+              <!-- /.card-header -->
+              <form action="/card/edit/<%= card._id %>?_method=PUT" method="POST">
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="nameCard">Card Name</label>
+                    <input type="text" name="name" value="<%= card.name %>" class="form-control" id="name" placeholder="Input Card Name" required>
+                  </div>
+                </div>
+                <!-- /.card-body -->
+
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-warning">Create</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <%- include ../../partials/footer %>
+  <%- include ../../partials/js %>
