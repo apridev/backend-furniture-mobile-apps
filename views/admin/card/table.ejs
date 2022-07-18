@@ -1,0 +1,27 @@
+<table id="example2" class="table table-bordered table-hover">
+    <thead>
+    <tr>
+      <th>No</th>
+      <th>Name Card</th>
+      <th>Options</th>
+    </tr>
+    </thead>
+    <tbody>
+      <% for(let i = 0; i < card.length; i++){ %>
+        <tr>
+          <td><%= i + 1 %></td>
+          <td><%= card[i].name %></td>
+          <td>
+            <form action="/card/delete/<%= card[i]._id %>?_method=DELETE" method="POST">
+            <a href="/card/edit/<%= card[i]._id %>" class="btn btn-sm btn-warning">Edit</a>
+            <!-- Button trigger modal -->
+                <button type="submit" class="btn btn-sm btn-danger">
+                  Delete
+                </button>
+                <!-- Modal -->
+          </form>
+          </td>
+        </tr>
+        <% } %>
+    </tbody>
+  </table>
