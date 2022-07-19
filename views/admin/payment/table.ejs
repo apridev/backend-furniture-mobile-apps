@@ -1,0 +1,30 @@
+<table id="example2" class="table table-bordered table-hover">
+    <thead>
+    <tr>
+      <th>No</th>
+      <th>Name</th>
+      <th>Card</th>
+      <th>Card Number</th>
+      <th>Opsi</th>
+    </tr>
+    </thead>
+    <tbody>
+      <% for(let i = 0; i < payment.length; i++){ %>
+        <tr>
+          <td><%= i + 1 %></td>
+          <td><%= payment[i].name %></td>
+          <td><%= payment[i].card.name%></td>
+          <td><%= payment[i].numberID%></td>
+          <td>
+            <form action="/payment/delete/<%= payment[i]._id %>?_method=DELETE" method="POST">
+            <a href="/payment/edit/<%= payment[i]._id %>" class="btn btn-sm btn-warning">Edit</a>
+            <!-- Button trigger modal -->
+                <button type="submit" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#exampleModal">
+                  Delete
+                </button>
+          </form>
+          </td>
+        </tr>
+        <% } %>
+    </tbody>
+  </table>
